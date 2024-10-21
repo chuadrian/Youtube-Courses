@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Unit Converter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+   <body>
+    <header>
+        <h1>Unit Converter</h1>
+    </header>
+
+    <main>
+        <div class="converter-grid">
+            <div class="converter-card">
+                <h2>Length Converter</h2>
+                <input type="number" id="lengthInput" placeholder="Enter a Value">
+                <select id="lengthFrom">
+                    <option value="m">Meters</option>
+                    <option value="km">Kilometers</option>
+                    <option value="cm">Centimeters</option>
+                    <option value="mm">Millimeters</option>
+                    <option value="in">Inches</option>
+                    <option value="ft">Feet</option>
+                    <option value="yd">Yards</option>
+                    <option value="mi">Miles</option>
+                </select>
+                <select id="lengthTo">
+                    <option value="m">Meters</option>
+                    <option value="km">Kilometers</option>
+                    <option value="cm">Centimeters</option>
+                    <option value="mm">Millimeters</option>
+                    <option value="in">Inches</option>
+                    <option value="ft">Feet</option>
+                    <option value="yd">Yards</option>
+                    <option value="mi">Miles</option>
+                </select>
+                <button onclick="convert('length')">Convert</button>
+                <p id="lengthResult" class="result"></p>
+            </div>
+
+            <div class="converter-card">
+                <h2>Temperature Converter</h2>
+                <input type="number" id="tempInput" placeholder="Enter a Value">
+                <select  id="tempFrom">
+                    <option value="c">Celsius</option>
+                    <option value="f">Fahrenheit</option>
+                    <option value="k">Kelvin</option>
+                </select>
+
+                <select  id="tempTo">
+                    <option value="c">Celsius</option>
+                    <option value="f">Fahrenheit</option>
+                    <option value="k">Kelvin</option>
+                </select>
+                <button onclick="convert('temp')">Convert</button>
+                <p id="tempResult" class="result"></p>
+            </div>
+
+            <div class="converter-card">
+                <h2>Weight Converter</h2>
+                <input type="number" id="weightInput" placeholder="Enter a Value">
+                <select  id="weightFrom">
+                    <option value="kg">Kilograms</option>
+                    <option value="g">Grams</option>
+                    <option value="mg">Milligrams</option>
+                    <option value="lb">Pounds</option>
+                    <option value="oz">Ounces</option>
+                </select>
+
+                <select  id="weightTo">
+                    <option value="kg">Kilograms</option>
+                    <option value="g">Grams</option>
+                    <option value="mg">Milligrams</option>
+                    <option value="lb">Pounds</option>
+                    <option value="oz">Ounces</option>
+                </select>
+                <button onclick="convert('weight')">Convert</button>
+                <p id="weightResult" class="result"></p>
+            </div>
+
+            <div class="converter-card">
+                <h2>Volume Converter</h2>
+                <input type="number" id="volumeInput" placeholder="Enter a value">
+                <select id="volumeFrom">
+                    <option value="l">Liters</option>
+                    <option value="ml">Milliliters</option>
+                    <option value="m3">Cubic Meters</option>
+                    <option value="gal">Gallons</option>
+                    <option value="qt">Quarts</option>
+                    <option value="pt">Pints</option>
+                    <option value="cup">Cups</option>
+                    <option value="fl_oz">Fluid Ounces</option>
+                </select>
+
+                <select id="volumeTo">
+                    <option value="l">Liters</option>
+                    <option value="ml">Milliliters</option>
+                    <option value="m3">Cubic Meters</option>
+                    <option value="gal">Gallons</option>
+                    <option value="qt">Quarts</option>
+                    <option value="pt">Pints</option>
+                    <option value="cup">Cups</option>
+                    <option value="fl_oz">Fluid Ounces</option>
+                </select>
+                <button onclick="convert('volume')">Convert</button>
+                <p id="volumeResult" class="result"></p>
+            </div>
+
+            <div class="converter-card">
+                <h2>Area Converter</h2>
+                <input type="number" id="areaInput" placeholder="Enter a value">
+                <select id="areaFrom">
+                    <option value="m2">Square Meters</option>
+                    <option value="km2">Square Kilometers</option>
+                    <option value="cm2">Square Centimeters</option>
+                    <option value="mm2">Square Millimeters</option>
+                    <option value="ha">Hectares</option>
+                    <option value="ac">Acres</option>
+                    <option value="ft2">Square Feet</option>
+                    <option value="in2">Square Inches</option>
+                    <option value="yd2">Square Yards</option>
+                </select>
+
+                <select id="areaTo">
+                    <option value="m2">Square Meters</option>
+                    <option value="km2">Square Kilometers</option>
+                    <option value="cm2">Square Centimeters</option>
+                    <option value="mm2">Square Millimeters</option>
+                    <option value="ha">Hectares</option>
+                    <option value="ac">Acres</option>
+                    <option value="ft2">Square Feet</option>
+                    <option value="in2">Square Inches</option>
+                    <option value="yd2">Square Yards</option>
+                </select>
+                <button onclick="convert('area')">Convert</button>
+                <p id="areaResult" class="result"></p>
+            </div>
+
+            <div class="converter-card">
+                <h2>Time Converter</h2>
+                <input type="number" id="timeInput" placeholder="Enter a Value">
+                <select  id="timeFrom">
+                    <option value="s">Seconds</option>
+                    <option value="min">Minutes</option>
+                    <option value="h">Hours</option>
+                    <option value="d">Days</option>
+                    <option value="wk">Weeks</option>
+                    <option value="mo">Months</option>
+                    <option value="yr">Years</option>
+                </select>
+
+                <select  id="timeTo">
+                    <option value="s">Seconds</option>
+                    <option value="min">Minutes</option>
+                    <option value="h">Hours</option>
+                    <option value="d">Days</option>
+                    <option value="wk">Weeks</option>
+                    <option value="mo">Months</option>
+                    <option value="yr">Years</option>
+                </select>
+                <button onclick="convert('time')">Convert</button>
+                <p id="timeResult" class="result"></p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 AdrianCodes247. All Rights Reserved</p>
+    </footer>
+
+    <script src="script.js"></script>
+   
+   </body>
+</html>
